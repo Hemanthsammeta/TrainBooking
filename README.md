@@ -31,11 +31,15 @@ This project is a Train Seat Reservation System built using Spring Boot. It allo
  
  **Build the project:**
       mvn clean package
+
+      
  **Run the application:**
       java -jar Hemanth.jar
 
 ### API Endpoints
   **Get Seat Status: GET /seats**
+
+  
   **Book Seats: GET /seats/book?numSeats={number_of_seats}**
   
 
