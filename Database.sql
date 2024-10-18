@@ -1,0 +1,20 @@
+CREATE TABLE seats (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    seat_number INT NOT NULL UNIQUE,
+    is_reserved BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+CREATE TABLE reservations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    seat_id INT NOT NULL,
+    num_seats INT NOT NULL,
+    reservation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (seat_id) REFERENCES seats(id) ON DELETE CASCADE
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
